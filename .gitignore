@@ -1,0 +1,15 @@
+# dependencies
+node_modules
+
+# next build
+.next
+
+# environment variables
+.env.local
+.env
+
+# logs
+npm-debug.log*
+
+# OS
+.DS_Store
