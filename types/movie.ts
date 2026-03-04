@@ -1,11 +1,17 @@
-export interface MovieData {
+export type MovieData = {
   title: string;
   year: string;
-  rating: string;
-  plot: string;
+  rated: string;
+  released: string;
+  runtime: string;
+  genre: string;
+  director: string;
   cast: string[];
-  poster: string;
-}
+  plot: string;
+  poster: string | null;
+  imdbRating: string;
+  imdbVotes: string;
+};
 
 export interface SentimentData {
   summary: string;
