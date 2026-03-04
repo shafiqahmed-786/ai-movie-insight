@@ -6,25 +6,12 @@ import MovieCard from "@/components/MovieCard";
 import CastList from "@/components/CastList";
 import Loader from "@/components/Loader";
 import toast, { Toaster } from "react-hot-toast";
+import { MovieData } from "@/types/movie";
 
-type Movie = {
-  title: string;
-  year: string;
-  rated: string;
-  released: string;
-  runtime: string;
-  genre: string;
-  director: string;
-  cast: string[];
-  plot: string;
-  poster: string | null;
-  imdbRating: string;
-  imdbVotes: string;
-};
 
 export default function Home() {
   const [imdbId, setImdbId] = useState("");
-  const [data, setData] = useState<Movie | null>(null);
+  const [data, setData] = useState<MovieData | null>(null);
   const [loading, setLoading] = useState(false);
 
   const isValidId = (id: string) => /^tt\d{7,8}$/.test(id);
