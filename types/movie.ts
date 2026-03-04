@@ -1,11 +1,11 @@
 export type MovieData = {
   title: string;
   year: string;
-  rated: string;
-  released: string;
-  runtime: string;
-  genre: string;
-  director: string;
+  rated?: string;
+  released?: string;
+  runtime?: string;
+  genre?: string;
+  director?: string;
   cast: string[];
   plot: string;
   poster: string | null;
