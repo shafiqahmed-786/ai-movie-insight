@@ -1,36 +1,38 @@
 "use client";
 
+import { useCallback } from "react";
 import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-import type { Engine } from "tsparticles-engine";
+import { loadSlim } from "tsparticles-slim";
 
 export default function ParticlesBackground() {
-  const particlesInit = async (engine: Engine) => {
-    await loadFull(engine);
-  };
+  const particlesInit = useCallback(async (engine: any) => {
+    await loadSlim(engine);
+  }, []);
 
   return (
     <Particles
       id="tsparticles"
       init={particlesInit}
+      className="absolute inset-0 -z-10"
       options={{
-        fullScreen: { enable: false },
         background: { color: "transparent" },
         particles: {
           number: { value: 40 },
-          size: { value: 2 },
-          move: { enable: true, speed: 0.5 },
-          opacity: { value: 0.3 },
           color: { value: "#3b82f6" },
+          opacity: { value: 0.3 },
+          size: { value: 2 },
+          move: {
+            enable: true,
+            speed: 0.5
+          },
           links: {
             enable: true,
             distance: 150,
             opacity: 0.2,
-            color: "#6366f1",
-          },
-        },
+            color: "#6366f1"
+          }
+        }
       }}
-      className="absolute inset-0 -z-10"
     />
   );
 }
